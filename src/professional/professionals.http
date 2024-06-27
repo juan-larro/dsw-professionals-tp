@@ -1,0 +1,50 @@
+### obtener todos los professionals de professionals
+GET http://localhost:3000/api/professionals
+
+### Obtener un professional de professionals - FUNCIONA CON ID
+GET http://localhost:3000/api/professionals/1
+
+###Crear nuevo professional en professionals - FUNCIONA CON ID
+POST http://localhost:3000/api/professionals
+Content-Type: application/json
+
+{
+    "dni": "12325478",
+    "lastname": "Traverso",
+    "name": "Juan Maria",
+    "adress": "El cielito",
+    "phone_number": "341971",
+    "mail": "jmtraverso@gmail.com",
+    "birth_date":"28/12/1950",
+    "id": "2"
+}
+
+### Modificar un professional (put - recurso completo e idempotente) - FUNCIONA CON ID
+PUT http://localhost:3000/api/professionals/1
+Content-Type: application/json
+
+{
+    "dni": "44021044",
+    "lastname": "Larroquette",
+    "name": "Juani",
+    "adress": "Maipu 1212",
+    "phone_number": "3400 533008",
+    "mail": "juan@gmail.com",
+    "birth_date":"8/8/2002",
+    "id": "98"
+}
+
+### Modificar un professional (patch - recurso parcial ) - NO FUNCIONA CON ID
+PATCH  http://localhost:3000/api/professionals/1
+Content-Type: application/json
+
+{
+    "dni": "44021044",
+    "lastname": "El mejor se ha cambiado el apellido",
+    "name": "Juancho se cambio el nombre",
+    //"birth_date":"8/8/2002",
+    "adress": "Se cambio la direccion"
+}
+
+### Borrar un professional - FUNCIONA CON ID
+DELETE http://localhost:3000/api/professionals/1
